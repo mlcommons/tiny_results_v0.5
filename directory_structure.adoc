@@ -6,6 +6,7 @@ A submission is for one code base for the benchmarks submitted. An org may make 
 ** <submitting_organization>/
 *** systems/
 **** <system_desc_id>.json   # combines hardware and software stack information
+**** TinyMLPerf_v0.1_Submission_Checklist.pdf
 *** code/
 **** <benchmark_name per reference>/ 
 ***** <implementation_id>/
@@ -39,3 +40,4 @@ Here is the list of mandatory files for all submissions in any division/category
 * READMEs to enable users to replicate performance results
 * code which interfaces with the runner
 * <system_desc_id>.json
+* TinyMLPerf_v0.1_Submission_Checklist.pdf
