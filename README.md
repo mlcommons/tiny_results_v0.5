@@ -1,89 +1,129 @@
-# Tiny MLPerf™ v0.1
+# Tiny MLperf  v0.1 on PCL Scepu02
 
-## Submit Results
-Before Submitting your code and results to this GitHub page, you must email your results to the Chairs (cbanbury@g.harvard.edu and vj@eecs.harvard.edu).
+By: Peng Cheng Laboratory
+[![pcl](http://www.szpclab.com/webimages/logo.png)](http://www.szpclab.com/)
 
-At 1 pm PT on May 7th, you must:
-* Make a copy of the [results template](https://docs.google.com/spreadsheets/d/1M5oa12XjlobhcvuXaDmT42tVv6yY9O3OVSJ3sSDYKZ0/edit?usp=sharing)
-* Remove the example results
-* Enter **all** of your results
-* Email your copy of the results table to the chairs (cbanbury@g.harvard.edu and vj@eecs.harvard.edu)
+Engineers:
+* Niu Wenxu
+    * email: wniu@connect.ust.hk
+    * github: https://github.com/ninn55
 
-## GitHub Submission HOWTO
-At 1:30 pm PT on May 7th, you must submit a pull request will all of the required components.
+* Xu Xuesong
+    * email: xuxs@pcl.ac.cn
+    * github: https://github.com/coolbacon
 
-### Clone the Tiny MLPerf™ v0.1 submission tree
+You can contact either of us for an evaluation board or faulty submission.
 
-Clone the submission tree e.g. under your home directory:
+## Background
 
-```bash
-$ export SUBMISSION_ROOT=$HOME/submission_tiny_1_0
-$ git clone git@github.com:mlcommons/submission_tiny_1.0.git $SUBMISSION_ROOT
-$ cd $SUBMISSION_ROOT
-```
+PCL Scepu02 is a evaluation board of RV32-A. It has a RV32-A SoC which implementing RV32IMAC. Designed by Peng Cheng Laboratory and fabricated with SMIC 55nm process.
 
-### Create a branch
+## The Hardware
 
-We recommend creating a new branch for every logically connected group of
-results e.g. all results from your System-Under-Test (SUT) or only relating to
-a particular benchmark. Prefix your branch name with your organization's name.
-Feel free to include the SUT name, implementation name, benchmark name, etc.
+The board schematic:
+![SCEPU01 Design-A](https://i.loli.net/2021/05/07/i2uDjlAMXxQEswC.png)
 
-For example:
+Before every SPI flash you need to switch on,therefore connect 2 and 7 on SW1. After every flash, you need to switch it off and reset.
 
-```bash
-$ git checkout master && git pull
-$ git checkout -b dividiti-closed-aws-g4dn.4xlarge-openvino
-```
+![Switch](https://i.loli.net/2021/05/07/R82kKcLwjDhbBy6.png)
 
-Populate your branch according to the [Tiny MLPerf Directory Structure](https://github.com/mlcommons/submission_tiny_1.0/blob/master/directory_structure.adoc).
+Then connect your jlink adapter with the spi flash
 
-You can inspect your changes:
+![Flash](https://i.loli.net/2021/05/07/uEYbfFXhrWBIOcs.png)
 
-```bash
-$ git status
-On branch dividiti-closed-aws-g4dn.4xlarge-openvino
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+![jlink](https://i.loli.net/2021/05/07/lJiFUjItu4HZGyv.png)
 
-        closed/dividiti/code/
-        closed/dividiti/results/
-        closed/dividiti/systems/
+| Number  | Jtag name  | SPI name  |
+|---|---|---|
+|5   | TDI  | MOSI  |
+| 7  | TMS  | NSS  |
+| 9  | TCK  | SCK  |
+|13   | TDO  | MISO  |
 
-nothing added to commit but untracked files present (use "git add" to track)
-```
+You can download the full schematic from [here](https://drive.google.com/file/d/1q_uKU2rHQ6LAZEVzQqkY5DeXxF4AG_Ns/view?usp=sharing).
 
-and make intermediate commits as usual:
+## Build instruction
+
+We are using a special build system called waf. First you need to install waf using documents from [here](https://waf.io/).
 
 ```bash
-$ git add closed/dividiti
-$ git commit -m "Dump repo:mlperf-closed-aws-g4dn.4xlarge-openvino."
+curl -o waf https://waf.io/waf-2.0.20
+chmod +x waf
+export PATH=$PATH:$(pwd)
 ```
 
-### Push the changes
-
-Once you are happy with the tree structure, you can push the changes:
+Then install riscv32 gnu toolchain with our abi.
 
 ```bash
-$ git push
-
-fatal: The current branch dividiti-closed-aws-g4dn.4xlarge-openvino has no upstream branch.
-To push the current branch and set the remote as upstream, use
-
-    git push --set-upstream origin dividiti-closed-aws-g4dn.4xlarge-openvino
+git clone —recursive https://github.com/riscv/riscv-gnu-toolchain
+git submodule foreach git reset —hard
+./configure —prefix=/usr/local —with-abi=ilp32f —with-arch=rv32imaf
+sudo make
 ```
 
-Do exactly as suggested:
+Then you need to install jlink software from [here](https://www.segger.com/downloads/jlink/).
+
+### Anomaly Detection
+
+Build the firmware with
+```bash
+python tinymlperf/GenerateModel.py
+waf distclean
+waf distclean configure build --tinymlperf --pclrv32
+```
+
+Flash the firmware with
+```bash
+waf flash --flashtarget ad
+```
+or flash `build/anomaly_detection.bin` directly using `JFlashSPI`.
+
+
+### Image Classification
+
+Build the firmware with
 
 ```bash
-$ git push --set-upstream origin dividiti-closed-aws-g4dn.4xlarge-openvino
+waf distclean
+waf configure build
 ```
 
-### Create a pull request
+Flash the firmware with
 
-If you now go to https://github.com/mlcommons/submission_tiny_1.0, you should see a notification
-about your branch being recently pushed and can immediately create a pull request (PR).
-You can also select your branch from the dropdown menu under `<> Code`. (Aren't you happy you prefixed your branch's name with the submitter's name?)
+```bash
+waf flash
+```
+or flash `build/image_classification.bin` directly using `JFlashSPI`.
 
-As usual, you can continue committing to the branch until the PR is merged, with any changes
-being reflected in the PR.
+### Keyword Spotting
+
+
+Build the firmware with
+
+```bash
+waf distclean
+waf configure build
+```
+
+Flash the firmware with
+
+```bash
+waf flash
+```
+or flash `build/keyword_spotting.bin` directly using `JFlashSPI`.
+
+### Visual wake word
+
+Build the firmware with
+
+```bash
+waf distclean
+waf configure build
+```
+
+Flash the firmware with
+
+```bash
+waf flash
+```
+or flash `build/keyword_spotting.bin` directly using `JFlashSPI`.
