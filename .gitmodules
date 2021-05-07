@@ -1,0 +1,3 @@
+[submodule "open/hls4ml/code/ic/RN06/training/benchmark-runner-ml"]
+	path = open/hls4ml/code/ic/RN06/training/benchmark-runner-ml
+	url = https://github.com/eembc/benchmark-runner-ml
