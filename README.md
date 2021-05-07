@@ -67,6 +67,7 @@ Then you need to install jlink software from [here](https://www.segger.com/downl
 
 Build the firmware with
 ```bash
+cd closed/PengChengLaboratory/code/ad/
 python tinymlperf/GenerateModel.py
 waf distclean
 waf distclean configure build --tinymlperf --pclrv32
@@ -74,6 +75,7 @@ waf distclean configure build --tinymlperf --pclrv32
 
 Flash the firmware with
 ```bash
+cd closed/PengChengLaboratory/code/ad/
 waf flash --flashtarget ad
 ```
 or flash `build/anomaly_detection.bin` directly using `JFlashSPI`.
@@ -84,6 +86,7 @@ or flash `build/anomaly_detection.bin` directly using `JFlashSPI`.
 Build the firmware with
 
 ```bash
+cd closed/PengChengLaboratory/code/ic/
 waf distclean
 waf configure build
 ```
@@ -101,6 +104,7 @@ or flash `build/image_classification.bin` directly using `JFlashSPI`.
 Build the firmware with
 
 ```bash
+cd closed/PengChengLaboratory/code/kws/
 waf distclean
 waf configure build
 ```
@@ -117,6 +121,7 @@ or flash `build/keyword_spotting.bin` directly using `JFlashSPI`.
 Build the firmware with
 
 ```bash
+cd closed/PengChengLaboratory/code/vww/
 waf distclean
 waf configure build
 ```
