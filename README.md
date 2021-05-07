@@ -5,7 +5,7 @@ This document provides a brief overview of our submission for tinyMLPerf benchma
 Our submission is based on the Latent AI Efficient Inference Platform (LEIP) SDK product that can 
 is easy to use for model optimization. LEIP is model and hardware agnostic.
 
-The Latent AI benchmarks were recorded on the Raspberry Pi 4 using a full-UART implementation. The image for the RPi operating system can be found [here](https://drive.google.com/file/d/1zH-Ae6N-UgwEz3gi2X9rxEXq4yhlH2OS/view?usp=sharing). 
+The Latent AI benchmarks were recorded on the Raspberry Pi 4 using a full-UART implementation. The image for the RPi operating system can be found [here](https://drive.google.com/drive/folders/1i7YFF-2HLTE2k1NL3Y1ZF5HF7JTFHwrX?usp=sharing). 
 
 Latent AI Model Binaries are compiled using Latent AI's proprietary SDK. The SDK can be accessed via an evaluation license (free 30-day trial period). 
 
