@@ -1,0 +1,6141 @@
+01093.666 session: m-session-start-id[20210507171357]
+01093.666 parser: m-bmark-run-name[ML Performance 1.0.1]-code[ulp-mlperf]
+01093.666 sequencer: m-sequencer-start
+01093.666 sequencer: m-sequencing-i[1]-command[dut profile]-ack[/dut: m-ready/]-ms[5000]-acc[0]-total_ms[54200]
+01093.667 parser: Command "dut profile"
+01093.667 parser: m-ready-finished[dut]
+01093.689 dut: m-profile-[ULPMark for tinyML Firmware V0.0.1]
+01093.689 dut: m-model-[kws01]
+01093.689 dut: m-ready
+01093.689 sequencer: m-sequencing-i[2]-command[bm cfg ulp-mlperf runMode]-ack[/parser: m-ready/]-ms[5000]-acc[5000]-total_ms[54200]
+01093.689 parser: Command "bm cfg ulp-mlperf runMode"
+01094.190 parser: m-bm-cfg-name[ulp-mlperf]-key[runMode]-val[bmark]
+01094.190 parser: m-ready-finished[bm]
+01094.190 sequencer: m-sequencing-i[3]-command[dut timestamp]-ack[/dut: m-ready/]-ms[5000]-acc[10000]-total_ms[54200]
+01094.190 parser: Command "dut timestamp"
+01094.190 parser: m-ready-finished[dut]
+01094.202 dut: m-lap-us-252779725
+01094.202 dut: m-ready
+01094.202 sequencer: m-sequencing-i[4]-command[bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000000_Stop_7.bin"]-ack[/parser: m-ready/]-ms[7840]-acc[15000]-total_ms[54200]
+01094.202 parser: Command "bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000000_Stop_7.bin""
+01094.202 parser: File size is 490, loading...
+01094.203 parser: Starting at byte offset 0
+01094.203 parser: Sending 490 bytes
+01094.203 parser: m-mute-target[dut]
+01094.472 parser: m-unmute-target[dut]
+01094.472 parser: Binary load took 0.269 sec, or 1.822 kB/sec
+01094.472 parser: m-bload-done
+01094.472 parser: m-ready-finished[bload]
+01094.472 sequencer: m-sequencing-i[5]-command[dut infer 600 1]-ack[/dut.?: m-ready/]-ms[-1]-acc[22840]-total_ms[54200]
+01094.472 parser: Command "dut infer 600 1"
+01094.472 parser: m-ready-finished[dut]
+01096.735 dut: -24249 -24848 -24848 -24848 -24848 -24548 -24548 -17962 -14669 -11975 -13172 -14070 -14968 -14070 0 8981 8682 8382 8083 7484 6885 6287 3592 -1197 -4790 -7784 -9879 -13172 -10777 -8083 -5987 -4790 -4491 -5389 -9879 -11376 -11975 -12873 -14370 -14370 -14669 -14968 -14968 -14070 -14669 -16166 -17363 -17363 -17962 599 -299 599 599 0 0 -599 -3293 -5389 -4790 -2395 -2395 -2994 -2096 -3592 1197 599 599 599 1197 1497 1197 1796 2096 1197 1796 2395 1796 -599 -3293 -3592 -3892 -3592 -2395 -2096 -1497 -1197 -898 -299 0 299 299 1197 1796 2395 1497 1497 2694 3293 -599 -599 0 0 0 -898 -599 0 0 1197 1796 2694 2994 2395 299 -599 -2096 -2096 -2694 -2694 -2694 -2096 -1796 -599 -599 -898 -1497 -2096 -1497 -898 -599 -1796 -2096 -1197 -2395 -2096 -2694 -2694 -2395 -2994 -3293 -3892 -2994 -2395 -2395 -2096 -1796 -1497 -599 -599 -299 299 -299 599 0 -299 -599 -599 0 -1197 -2096 -2395 -2096 -898 -1197 -2096 -2096 -1796 -1796 -1197 -898 -898 -299 -1197 -1796 -1497 -1796 -1796 -299 -299 -599 299 299 -299 -599 -1497 -898 -1197 -1497 -1497 -1796 -1796 -599 -1197 -1497 -898 -1197 -1796 -1197 -1197 -1197 -299 -599 -599 -898 -2694 -1497 -2096 -2096 -2395 -2096 -1796 -599 -1197 -898 -599 -599 -898 -1197 -1197 -1197 -1197 -1796 -2395 -1796 -1497 -2096 -599 -898 -1497 -1197 -898 -1197 -1497 -1497 -1796 -898 -1197 -1497 -1796 -2395 -2395 -2694 -2395 -2096 -2395 -2395 -599 -599 -599 -599 0 -599 -299 -898 -299 -1197 -1796 -1796 -1497 -1497 0 -898 -599 -299 0 299 299 599 299 299 0 -299 -599 0 299 898 599 0 299 0 -299 299 898 599 599 1197 599 299 -1197 -1497 -1497 -599 -898 -1497 -2096 -299 -599 -599 -898 -599 -299 -599 0 -599 -1497 -1497 -1497 -2096 -1796 -599 -898 -1197 -898 -1197 -1197 -1197 -1197 -898 -1197 -898 -898 -1197 -1197 -1796 -1197 -599 -599 -299 -898 -1197 -1197 -898 -898 -898 -898 -1197 -898 -1197 -1197 -1197 -599 -898 -1197 -898 -599 -599 -898 -599 -898 -599 -299 -299 0 -898 -599 -599 -898 -898 299 -299 299 299 -299 -299 -299 -299 -599 -299 0 0 -299 -299 -299 0 0 0 -299 -599 -898 0 299 0 -599 0 -299 299 299 -299 -299 -599 -1197 -1197 -599 0 0 -299 -299 -898 -299 0 599 898 0 0 299 299 299 1197 0 299 299 299 -299 -599 -599 -299 -299 -599 -299 -299 0 299 0 -599 299 -599 -299 -299 0 -599 -299 -299 -299 -299 0 -599 -299 299 -299 -898 -299 -599 299 299 -599 -1197 -299 0 0 -599 0 299 299 599 898 599 599 -898 -1197 -898 -898 -599 -299 -299 -299 -898 -898 -299 -299 -898 -599 -599 -599 -299 -898 -299 -599 -898 -1197 -898 -599 -898 -1197 -1197 -1197 -599 -299 -599 0 -299 -299 
+01096.735 dut: m-warmup-start-1
+01096.763 dut: got ack from dsp
+got feature interrupt
+m-warmup-done
+01096.763 dut: m-infer-start-600
+01096.763 dut: m-lap-us-255335358
+01110.573 dut: got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+m-lap-us-269136322
+01110.574 dut: m-infer-done
+01110.574 dut: m-results-[0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.902,0.000,0.000,0.000,0.095]
+01110.574 dut: m-ready
+01110.574 sequencer: m-sequencing-i[6]-command[bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000001_Left_2.bin"]-ack[/parser: m-ready/]-ms[7840]-acc[22839]-total_ms[54200]
+01110.574 parser: Command "bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000001_Left_2.bin""
+01110.574 parser: File size is 490, loading...
+01110.575 parser: Starting at byte offset 0
+01110.575 parser: Sending 490 bytes
+01110.575 parser: m-mute-target[dut]
+01110.845 parser: m-unmute-target[dut]
+01110.845 parser: Binary load took 0.270 sec, or 1.813 kB/sec
+01110.845 parser: m-bload-done
+01110.845 parser: m-ready-finished[bload]
+01110.845 sequencer: m-sequencing-i[7]-command[dut infer 600 1]-ack[/dut.?: m-ready/]-ms[-1]-acc[30679]-total_ms[54200]
+01110.845 parser: Command "dut infer 600 1"
+01110.845 parser: m-ready-finished[dut]
+01113.072 dut: -27242 -26644 -27242 -26943 -27242 -27242 -27841 -27841 -27542 -28739 -28141 -27242 -27242 -27242 -27242 -27841 -27242 -26644 -26644 -26344 -23351 -9280 -5089 -1796 599 3892 6287 7185 7784 8083 8382 7784 7185 5987 3892 898 -3592 -5987 -8981 -9280 -12573 -12873 -15268 -18561 -22453 -23949 -25746 -26045 -26344 -299 -599 -599 -1197 -898 -1197 898 0 0 299 -299 0 -299 0 -599 299 -599 -599 -299 -299 3592 6586 5987 4491 3892 2994 2694 2395 2096 2096 1796 1796 2096 1796 2694 2694 2395 898 0 599 -599 0 -299 -1796 -898 -599 -299 -299 -599 0 898 299 0 599 299 599 1197 299 599 599 1197 1197 599 898 599 898 299 299 599 3293 3592 2096 2694 2694 2096 1497 898 898 599 599 898 599 599 299 898 599 299 299 1197 2096 1796 1497 1796 1497 898 0 0 599 -299 299 0 -599 0 0 -299 0 0 0 0 -299 0 0 299 0 299 -299 -299 -299 898 -599 -599 -599 -1197 -1796 -1796 -1497 -1197 -898 -599 -898 -299 0 0 599 1197 299 1197 898 1796 1796 1497 599 898 0 -299 -599 -599 299 299 0 -299 599 599 -299 0 0 299 599 -299 299 0 0 -299 0 -599 -299 -299 299 -599 0 0 299 0 0 -299 -299 -299 -599 -599 -599 -599 -299 -299 599 -599 -898 -299 -299 -599 -299 0 -599 -599 -599 0 0 599 -299 0 -898 -299 0 0 299 0 0 299 -898 -599 -299 299 -299 0 -599 -599 -599 -299 -1197 -1796 -1796 -1796 -1197 -1197 -1197 -1197 -1197 -1197 -898 -1197 -599 -299 -599 -599 -898 -599 -599 0 -299 -898 -1197 -1197 -898 -599 -299 0 0 -299 0 -599 -299 299 -299 -299 299 299 299 299 299 299 0 0 0 0 -599 0 -299 0 0 0 -299 -299 299 299 299 299 599 599 599 898 898 0 299 599 1497 599 0 599 599 0 -299 0 -299 299 0 -299 0 -898 -599 -299 299 -299 -599 -299 0 -299 -299 -599 -599 0 -299 -299 -299 0 299 0 -599 -898 -898 -599 -299 -299 -299 299 299 299 299 299 0 299 299 299 -299 -299 0 -599 299 -599 -599 -299 -299 0 299 -299 299 0 -299 0 -299 0 0 -299 -299 0 0 599 0 -599 0 -299 0 -599 -299 0 -599 -299 599 599 599 599 898 898 599 599 599 599 299 299 0 0 0 299 0 0 0 -299 0 -299 299 0 -299 0 -299 0 0 0 -299 -299 -299 -299 0 -299 0 -299 -599 0 0 0 -599 -299 299 299 0 -299 -299 -299 -299 -299 -599 -1197 -1796 -1497 -1796 -1796 -1796 -1497 -1497 -1197 -1197 -898 -898 -599 -898 -599 -599 0 -299 0 0 -599 0 -599 
+01113.072 dut: m-warmup-start-1
+01113.102 dut: got ack from dsp
+got feature interrupt
+m-warmup-done
+01113.102 dut: m-infer-start-600
+01113.102 dut: m-lap-us-271675324
+01126.913 dut: got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+m-lap-us-285476380
+01126.913 dut: m-infer-done
+01126.913 dut: m-results-[0.000,0.000,0.935,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.063]
+01126.913 dut: m-ready
+01126.913 sequencer: m-sequencing-i[8]-command[bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000002_Right_6.bin"]-ack[/parser: m-ready/]-ms[7840]-acc[30678]-total_ms[54200]
+01126.914 parser: Command "bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000002_Right_6.bin""
+01126.914 parser: File size is 490, loading...
+01126.914 parser: Starting at byte offset 0
+01126.914 parser: Sending 490 bytes
+01126.914 parser: m-mute-target[dut]
+01127.184 parser: m-unmute-target[dut]
+01127.184 parser: Binary load took 0.270 sec, or 1.812 kB/sec
+01127.184 parser: m-bload-done
+01127.184 parser: m-ready-finished[bload]
+01127.184 sequencer: m-sequencing-i[9]-command[dut infer 600 1]-ack[/dut.?: m-ready/]-ms[-1]-acc[38518]-total_ms[54200]
+01127.185 parser: Command "dut infer 600 1"
+01127.185 parser: m-ready-finished[dut]
+01129.422 dut: -15567 -13771 -10777 -8682 -10179 -10478 -10478 -10179 -10179 -11376 -13172 -14370 -15567 -16166 -17064 -17064 -17064 -10179 -3293 -599 2096 3592 4191 3892 3592 1796 898 0 -299 -1197 -3293 -6586 -8083 -11376 -12873 -14070 -7484 -3892 -3592 -4790 -6885 -8682 -11077 -12873 -14070 -15567 -16166 -15866 -16166 -599 -299 299 0 -299 -1197 -1796 -2096 -1197 -1197 -299 599 299 599 599 0 299 4491 6885 6586 5089 4191 3592 2994 2994 3293 3293 3293 2994 2694 3592 4191 4790 2994 1796 1497 898 0 -299 -299 0 0 299 599 898 599 299 299 0 0 -599 -299 -299 299 -299 -299 -599 -599 -898 -898 -898 -898 0 299 0 0 1497 -599 -1497 -1796 -2395 -2395 -2395 -2395 -1796 -898 299 1197 2096 1796 2694 2096 1197 599 599 -898 299 -299 -299 -898 -898 -599 -898 -599 -599 0 299 299 -898 -599 -898 -1197 -898 -1197 -299 0 0 299 0 0 -599 -599 0 299 299 0 -1197 -1197 -599 -299 -898 -599 -599 -898 -1197 -1197 -599 -299 0 299 599 -599 -599 -898 -1796 -1197 -599 -1197 -599 -299 -299 0 -599 -599 -898 0 0 -898 -898 -1197 -1497 -1497 -1497 -898 -599 -599 -299 -299 299 0 -599 -299 0 0 -599 299 599 -299 -898 -898 -898 -1197 -1197 -1796 -1796 -1497 -1796 -1497 -1197 -898 -898 -898 -1197 -898 -898 -1197 -1796 -1497 -1197 -299 -299 0 0 -599 -299 0 -599 -299 -599 -599 -599 -1497 -599 -599 -898 -599 -599 299 -299 -299 -299 -299 -599 -1197 -1197 -1796 -1197 -299 0 0 299 299 0 -299 -599 -599 -599 -299 -599 -898 -1197 -1197 0 0 -299 -898 -299 -599 -898 -599 -599 -599 -898 -599 -599 -299 0 0 0 299 -299 299 299 299 299 -599 0 -299 -599 -299 -599 -898 -1197 -898 -599 -599 -299 0 599 898 599 299 -299 -898 -1197 -1197 -599 -599 -599 -599 -599 299 0 0 299 599 299 -299 -599 -299 299 -299 -299 -599 -599 -299 -599 -898 -599 -599 -599 -599 -299 -599 -299 299 -599 -299 -299 -599 -299 -299 -299 -299 -299 0 299 0 0 299 299 0 0 0 299 0 299 0 0 -599 -299 299 0 -299 -299 0 -599 -299 -599 299 -299 -299 -599 -299 299 0 0 -299 -898 -599 -898 -1197 -898 -599 -299 -299 -299 0 -599 0 0 -299 -299 299 599 299 -599 -599 -599 0 299 0 0 -599 0 -599 -599 0 -599 0 299 0 -599 -299 -299 -1197 -898 -599 0 299 0 0 -599 299 0 0 299 299 299 0 0 0 -599 -599 -599 -299 0 -599 -299 0 0 0 299 -898 -1197 -1197 -1197 -1197 -599 -599 -599 -599 -898 -898 -1197 -1197 -898 -1197 -898 -299 299 0 -599 -599 -299 0 0 0 0 -299 -299 
+01129.422 dut: m-warmup-start-1
+01129.452 dut: got ack from dsp
+got feature interrupt
+m-warmup-done
+01129.452 dut: m-infer-start-600
+01129.452 dut: m-lap-us-288026307
+01143.263 dut: got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+m-lap-us-301827362
+01143.263 dut: m-infer-done
+01143.263 dut: m-results-[0.000,0.000,0.001,0.000,0.000,0.000,0.997,0.000,0.000,0.000,0.000,0.000]
+01143.263 dut: m-ready
+01143.263 sequencer: m-sequencing-i[10]-command[bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000003_Up_8.bin"]-ack[/parser: m-ready/]-ms[7840]-acc[38517]-total_ms[54200]
+01143.263 parser: Command "bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000003_Up_8.bin""
+01143.263 parser: File size is 490, loading...
+01143.263 parser: Starting at byte offset 0
+01143.264 parser: Sending 490 bytes
+01143.264 parser: m-mute-target[dut]
+01143.534 parser: m-unmute-target[dut]
+01143.534 parser: Binary load took 0.271 sec, or 1.810 kB/sec
+01143.534 parser: m-bload-done
+01143.534 parser: m-ready-finished[bload]
+01143.534 sequencer: m-sequencing-i[11]-command[dut infer 600 1]-ack[/dut.?: m-ready/]-ms[-1]-acc[46357]-total_ms[54200]
+01143.534 parser: Command "dut infer 600 1"
+01143.535 parser: m-ready-finished[dut]
+01145.778 dut: -26644 -28141 -27242 -27542 -27542 -26644 -26943 -26344 -27242 -27242 -26644 -27242 -28141 -27242 -27841 -27242 -27242 -27242 -27841 -27841 -27542 -27542 -27542 -26644 -26943 -26644 -17663 -2694 8083 8382 8382 7484 4491 2096 0 -2096 -3592 -5389 -8083 -6885 -8981 -9879 -11077 -12873 -14968 -16765 -16765 -17962 -17962 299 -299 299 0 299 599 299 0 299 299 599 0 -299 0 0 299 0 599 599 0 599 299 0 299 599 299 0 599 -299 -599 0 299 0 0 -898 -898 -898 -299 -299 0 299 599 898 898 898 1197 1497 599 599 599 1197 898 1197 1197 1197 599 599 1197 1197 1197 898 898 1497 898 1497 1197 1197 1197 1197 898 1197 1497 1497 1796 1197 -2694 -2395 -2096 -1796 -1796 -1796 -2096 -2096 -2395 -2694 -2994 -3293 -2395 -2395 -2994 -1796 -2395 -1796 -599 0 299 299 599 0 898 898 599 599 599 299 0 898 898 599 898 599 898 299 599 599 299 299 599 299 599 599 1197 599 898 -1497 -2096 -1497 -1497 -898 -898 -1497 -898 -1197 -599 -299 -898 -599 -898 -299 -599 0 299 299 599 0 898 898 0 599 599 299 299 299 0 0 599 0 299 599 898 299 0 599 0 599 599 0 0 299 299 0 599 599 299 -1197 -599 -299 -599 0 0 0 -299 0 -299 299 898 0 898 1197 898 1497 1197 1197 599 299 299 0 0 0 -299 -599 0 -299 -599 0 -299 0 0 0 0 -299 0 -599 -299 -599 -299 -299 -599 -599 -898 -299 -599 1796 0 -299 -299 0 -299 -299 0 299 299 299 299 599 599 599 599 -299 -599 -299 -599 -299 -599 -898 -599 -299 -299 -898 -599 -299 -898 -299 -599 -299 -599 -299 -599 -299 -599 -599 -599 -599 -599 -599 -898 -898 -599 -599 -898 -1197 -1197 -1796 -1796 -1497 -1197 -1796 -1497 -1497 -599 -898 -1197 -1197 -1197 -898 -599 -299 -1497 -898 -599 -1497 -898 -898 -1197 -299 -299 -299 -599 -299 -599 -599 0 -599 -299 -898 -599 -599 -299 -599 -898 -599 -599 -299 -299 -898 -599 -599 -599 -599 -599 1197 1197 599 599 599 0 0 299 299 898 299 299 599 898 299 898 299 299 0 -898 -299 -599 -599 -898 -898 -299 -599 -599 -299 -898 -299 -299 -898 -599 -599 0 -299 -599 -599 -599 -599 -599 -299 -599 -299 -599 -898 -599 -299 0 -898 -898 -898 -898 -898 -1197 -898 -898 -299 -599 -299 -299 -599 -599 -898 -299 -299 -599 -599 -299 -599 -299 -599 -898 -599 -898 -898 -299 -599 -599 -599 -599 -599 -299 -299 -299 -599 -599 -299 -599 -299 -898 -599 -299 -599 -599 -299 -299 -1197 -898 -1197 -1497 -1497 -1197 -1796 -1497 -2096 -1497 -1197 -1796 -1796 -898 -1497 -1497 -1197 -1197 -1197 -599 -299 -898 -299 
+01145.778 dut: m-warmup-start-1
+01145.808 dut: got ack from dsp
+got feature interrupt
+m-warmup-done
+01145.808 dut: m-infer-start-600
+01145.808 dut: m-lap-us-304381379
+01159.619 dut: got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+m-lap-us-318183319
+01159.619 dut: m-infer-done
+01159.619 dut: m-results-[0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.999,0.000,0.000,0.000]
+01159.619 dut: m-ready
+01159.620 sequencer: m-sequencing-i[12]-command[bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000004_On_5.bin"]-ack[/parser: m-ready/]-ms[7840]-acc[46356]-total_ms[54200]
+01159.620 parser: Command "bload dut "/home/jlcordar/eembc/runner/benchmarks/ulp-mlperf/datasets/kws01/tst_000004_On_5.bin""
+01159.620 parser: File size is 490, loading...
+01159.620 parser: Starting at byte offset 0
+01159.620 parser: Sending 490 bytes
+01159.620 parser: m-mute-target[dut]
+01159.890 parser: m-unmute-target[dut]
+01159.891 parser: Binary load took 0.271 sec, or 1.811 kB/sec
+01159.891 parser: m-bload-done
+01159.891 parser: m-ready-finished[bload]
+01159.891 sequencer: m-sequencing-i[13]-command[dut infer 600 1]-ack[/dut.?: m-ready/]-ms[-1]-acc[54196]-total_ms[54200]
+01159.891 parser: Command "dut infer 600 1"
+01159.891 parser: m-ready-finished[dut]
+01162.133 dut: -24848 -21854 -20656 -20656 -24548 -26344 -27841 -27542 -27242 -28141 -27841 -27841 -28141 -27242 -28141 -26344 -17064 -11077 -1197 3892 4191 5389 5688 5688 5688 5389 5389 5389 2395 299 -1197 -3892 -6885 -9879 -11975 -14370 -16765 -19459 -21255 -22453 -24848 -25746 -26644 -27242 -26644 -27841 -27841 -27841 -27242 -599 -1796 -898 -1197 -898 -299 -299 -299 0 0 0 299 299 299 299 1197 5389 7185 4491 2994 2694 2994 2994 2395 2694 2694 2694 3293 4191 4790 5389 6586 6885 6586 6586 5089 4191 3592 2694 2694 1497 898 599 299 299 -299 299 299 599 2096 2395 1497 1197 898 299 599 -299 -299 599 0 0 0 299 299 -898 -2395 -2096 -1497 -1796 -1197 -1497 -1796 -1497 -1497 -898 -898 -1197 -599 0 0 299 898 2096 2096 2395 2694 2395 2694 2395 898 299 898 299 0 299 898 599 599 -599 -299 -599 -898 -299 -599 299 -299 -898 -299 -299 -299 0 -299 -299 -1796 -3892 -3293 -3293 -2694 -2395 -2395 -2395 -2096 -2096 -1796 -1497 -1197 -898 0 299 599 299 898 898 2096 1796 1197 1796 1197 0 -299 0 299 0 -299 299 299 299 0 0 -1497 -1497 -898 -299 0 0 -599 0 -299 -299 -299 -599 0 -299 -898 299 299 0 0 0 -599 0 0 -599 -898 -1197 -599 -599 -1197 -1197 -599 -1497 -599 -299 0 299 599 1197 299 599 -299 0 0 -599 -299 -599 -299 -898 -2994 -2994 -2694 -1197 -299 -599 -299 -599 299 -1197 -599 -599 -1197 -599 -299 1197 -599 0 599 0 0 0 0 299 599 599 599 1197 898 1497 1497 2395 2096 1796 898 898 898 599 299 599 299 0 -898 0 -299 -898 -599 -898 -2395 -1796 -2096 -1497 -898 -898 -299 -599 -599 -599 -599 -599 -599 -599 -898 0 0 -599 -299 0 299 0 -299 -299 -299 -299 -299 -898 -1197 -1197 -1497 -1497 -1796 -1197 -599 -299 -299 0 299 0 0 -299 0 -299 0 -599 -898 -299 -898 0 898 599 299 -299 0 -299 0 -599 -599 -599 -599 0 299 -299 -299 -898 -1197 -2096 -2096 -2395 -2395 -2395 -2694 -2395 -1796 -1497 -1197 -898 -898 -898 -1197 -599 -599 -599 -299 0 0 0 -599 -299 -599 -599 0 599 -299 0 -599 -898 -1796 -2096 -898 -599 -299 299 -299 0 -299 -599 -599 0 0 599 299 -898 -1197 -898 299 0 -599 -599 -299 -599 -898 -898 -898 -299 -299 -299 0 0 0 -299 -299 -599 -898 -599 -898 -599 -599 -1197 -599 0 0 0 0 -299 -299 0 299 599 898 599 -299 -299 0 -299 -299 -599 -299 0 0 299 -599 -898 -1197 -1497 -1197 -1497 -1796 -1796 -1796 -1497 -1497 -1796 -1497 -1497 -1497 -1197 -1497 -1796 -1197 -1197 -599 -898 0 -599 -299 -599 -599 -299 -299 -599 -299 0 -299 0 
+01162.133 dut: m-warmup-start-1
+01162.164 dut: got ack from dsp
+got feature interrupt
+m-warmup-done
+01162.164 dut: m-infer-start-600
+01162.164 dut: m-lap-us-320738312
+01175.974 dut: got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+got ack from dsp
+got feature interrupt
+m-lap-us-334539368
+01175.974 dut: m-infer-done
+01175.974 dut: m-results-[0.000,0.000,0.000,0.000,0.000,0.999,0.000,0.000,0.000,0.000,0.000,0.000]
+01175.975 dut: m-ready
+01175.975 sequencer: m-sequencer-stop
+01175.983 session: m-session-stop-id[20210507171357]
+01175.983 session: Saved this run to session ID 20210507171357
