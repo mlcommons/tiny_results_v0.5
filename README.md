@@ -10,7 +10,7 @@ At 1 pm PT on May 7th, you must:
 * Email your copy of the results table to the chairs (cbanbury@g.harvard.edu and vj@eecs.harvard.edu)
 
 ## GitHub Submission HOWTO
-At 1:30 pm PT on May 7th, you must submit a pull request will all of the required components.
+At 1:30 pm PT on May 7th, you must submit a pull request with all of the required components.
 
 ### Clone the Tiny MLPerf™ v0.1 submission tree
 
