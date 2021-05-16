@@ -22,7 +22,7 @@
         ms: 7840
     },
     {
-        cmd: 'dut infer 600 1',
+        cmd: 'dut infer 10000 1',
         ms: -1,
         ack: /dut.?: m-ready/
     },
@@ -31,7 +31,7 @@
         ms: 7840
     },
     {
-        cmd: 'dut infer 600 1',
+        cmd: 'dut infer 10000 1',
         ms: -1,
         ack: /dut.?: m-ready/
     },
@@ -40,7 +40,7 @@
         ms: 7840
     },
     {
-        cmd: 'dut infer 600 1',
+        cmd: 'dut infer 10000 1',
         ms: -1,
         ack: /dut.?: m-ready/
     },
@@ -49,7 +49,7 @@
         ms: 7840
     },
     {
-        cmd: 'dut infer 600 1',
+        cmd: 'dut infer 10000 1',
         ms: -1,
         ack: /dut.?: m-ready/
     },
@@ -58,7 +58,7 @@
         ms: 7840
     },
     {
-        cmd: 'dut infer 600 1',
+        cmd: 'dut infer 10000 1',
         ms: -1,
         ack: /dut.?: m-ready/
     }
