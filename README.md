@@ -1,56 +1,79 @@
-# Latent AI TinyMLPerf Benchmarks v0.7 Closed Division
-## System Overview
+# Tiny MLPerf™ v0.1
 
-This document provides a brief overview of our submission for tinyMLPerf benchmarks v0.7. 
-Our submission is based on the Latent AI Efficient Inference Platform (LEIP) SDK product that can 
-is easy to use for model optimization. LEIP is model and hardware agnostic.
+## GitHub Submission HOWTO
 
-The Latent AI benchmarks were recorded on the Raspberry Pi 4 using a full-UART implementation. The image for the RPi operating system can be found [here](https://drive.google.com/file/d/1zH-Ae6N-UgwEz3gi2X9rxEXq4yhlH2OS/view?usp=sharing). 
+### Clone the Tiny MLPerf™ v0.1 submission tree
 
-Latent AI Model Binaries are compiled using Latent AI's proprietary SDK. The SDK can be accessed via an evaluation license (free 30-day trial period). 
+Clone the submission tree e.g. under your home directory:
 
-## Getting Started
-
-### Setting up UART
-
-Install the image onto the SD Card and boot up the RPI. Open terminal and do the following steps:
-1. Start raspi-config: `sudo raspi-config`.
-2. Select option 3 - Interface Options.
-3. Select option P6 - Serial Port.
-4. At the prompt Would you like a login shell to be accessible over serial? answer **'No'**
-5. At the prompt Would you like the serial port hardware to be enabled? answer **'Yes'**
-6. Exit raspi-config and reboot the Pi for changes to take effect.
-
-### Switching to Full UART
-
-The Raspberry Pi 4 has two UART implementations, mini UART and full UART. By default, mini UART is enabled, but it is unstable and subsequently, not recommended. In this section we highlight how to switch from mini-UART to full-UART using the same IO pins. 
-
-By running `ls -l /dev/` you can see that `serial0` is pointing to `ttyS0`, which is the mini-UART implementation.
-```
-lrwxrwxrwx 1 root root           7 May  6 20:27 serial0 -> ttyS0
-lrwxrwxrwx 1 root root           5 May  6 20:27 serial1 -> ttyAMA0
-```
-Edit /boot/config.txt (`sudo nano boot/config.txt`) to add the following lines:
-```
-enable_uart=1
-dtoverlay=pi3-miniuart-bt
-dtoverlay=disable-bt
+```bash
+$ export SUBMISSION_ROOT=$HOME/submission_tiny_1_0
+$ git clone git@github.com:mlcommons/submission_tiny_1.0.git $SUBMISSION_ROOT
+$ cd $SUBMISSION_ROOT
 ```
 
-Restart the pi and then run `ls -l /dev/`. You should see the `serial0` now pointing to `/dev/ttyAMA0`, the full UART implementation.
-```
-lrwxrwxrwx 1 root root           7 May  6 20:27 serial0 -> ttyAMA0
-lrwxrwxrwx 1 root root           5 May  6 20:27 serial1 -> ttyS0
-```
+### Create a branch
 
-Run `stty -F /dev/ttyAMA0 115200 -oddp raw` to activate serial comms as expected.
+We recommend creating a new branch for every logically connected group of
+results e.g. all results from your System-Under-Test (SUT) or only relating to
+a particular benchmark. Prefix your branch name with your organization's name.
+Feel free to include the SUT name, implementation name, benchmark name, etc.
 
-## Running the DUT for a model
+For example:
 
-Navigate to the model directory that you would like to test and run:
-```
-make clean all
-./bin/main
+```bash
+$ git checkout master && git pull
+$ git checkout -b dividiti-closed-aws-g4dn.4xlarge-openvino
 ```
 
-Now use the runner client.
+Populate your branch according to the [Tiny MLPerf Directory Structure](https://github.com/mlcommons/submission_tiny_1.0/blob/master/directory_structure.adoc).
+
+You can inspect your changes:
+
+```bash
+$ git status
+On branch dividiti-closed-aws-g4dn.4xlarge-openvino
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        closed/dividiti/code/
+        closed/dividiti/results/
+        closed/dividiti/systems/
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+and make intermediate commits as usual:
+
+```bash
+$ git add closed/dividiti
+$ git commit -m "Dump repo:mlperf-closed-aws-g4dn.4xlarge-openvino."
+```
+
+### Push the changes
+
+Once you are happy with the tree structure, you can push the changes:
+
+```bash
+$ git push
+
+fatal: The current branch dividiti-closed-aws-g4dn.4xlarge-openvino has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dividiti-closed-aws-g4dn.4xlarge-openvino
+```
+
+Do exactly as suggested:
+
+```bash
+$ git push --set-upstream origin dividiti-closed-aws-g4dn.4xlarge-openvino
+```
+
+### Create a pull request
+
+If you now go to https://github.com/mlcommons/submission_tiny_1.0, you should see a notification
+about your branch being recently pushed and can immediately create a pull request (PR).
+You can also select your branch from the dropdown menu under `<> Code`. (Aren't you happy you prefixed your branch's name with the submitter's name?)
+
+As usual, you can continue committing to the branch until the PR is merged, with any changes
+being reflected in the PR.
