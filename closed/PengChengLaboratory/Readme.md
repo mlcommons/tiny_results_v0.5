@@ -42,6 +42,10 @@ Then connect your jlink adapter with the spi flash
 
 You can download the full schematic from [here](https://drive.google.com/file/d/1q_uKU2rHQ6LAZEVzQqkY5DeXxF4AG_Ns/view?usp=sharing).
 
+The board with jtag and serial uart connected:
+
+![DSC04840-min.JPG](https://i.loli.net/2021/05/18/LuiaMmdzOs154fE.jpg)
+
 ## Build instruction
 
 We are using a special build system called waf. First you need to install waf using documents from [here](https://waf.io/).
