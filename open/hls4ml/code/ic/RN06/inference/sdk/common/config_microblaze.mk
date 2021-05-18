@@ -22,7 +22,6 @@ sdk-harness: setup data
 	cd  $(PROJECT)/src && cp ../../../common/$(ACC)/main_microblaze_harness.c main.c && cp -r ../../../common/$(ACC)/profile_microblaze profile && cp -r ../../../common/$(ACC)/monitor_microblaze monitor
 	sed -i 's/^_STACK_SIZE.*$$/_STACK_SIZE = DEFINED(_STACK_SIZE) ? _STACK_SIZE : 0x400000;/g' ./$(PROJECT)/src/lscript.ld
 	sed -i 's/^_HEAP_SIZE.*$$/_HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 0x4000000;/g' ./$(PROJECT)/src/lscript.ld
-
 .PHONY: sdk-harness
 
 gui:

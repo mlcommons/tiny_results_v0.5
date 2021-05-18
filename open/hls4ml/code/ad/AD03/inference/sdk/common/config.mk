@@ -13,17 +13,16 @@ setup:
 
 sdk: setup data
 	rm -f $(PROJECT)/src/helloworld.c
-	cd  $(PROJECT)/src && cp ../../../common/$(ACC)/main.c
+	cd  $(PROJECT)/src && cp ../../../common/$(ACC)/main.c main.c
 	sed -i 's/^_STACK_SIZE.*$$/_STACK_SIZE = DEFINED(_STACK_SIZE) ? _STACK_SIZE : 0x400000;/g' ./$(PROJECT)/src/lscript.ld
-        sed -i 's/^_HEAP_SIZE.*$$/_HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 0x4000000;/g' ./$(PROJECT)/src/lscript.ld
+	sed -i 's/^_HEAP_SIZE.*$$/_HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 0x4000000;/g' ./$(PROJECT)/src/lscript.ld
 .PHONY: sdk
 
 sdk-harness: setup data
 	rm -f $(PROJECT)/src/helloworld.c
 	cd  $(PROJECT)/src && cp ../../../common/$(ACC)/main_harness.c main.c && cp -r ../../../common/$(ACC)/profile profile && cp -r ../../../common/$(ACC)/monitor monitor
 	sed -i 's/^_STACK_SIZE.*$$/_STACK_SIZE = DEFINED(_STACK_SIZE) ? _STACK_SIZE : 0x400000;/g' ./$(PROJECT)/src/lscript.ld
-        sed -i 's/^_HEAP_SIZE.*$$/_HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 0x4000000;/g' ./$(PROJECT)/src/lscript.ld
-
+	sed -i 's/^_HEAP_SIZE.*$$/_HEAP_SIZE = DEFINED(_HEAP_SIZE) ? _HEAP_SIZE : 0x4000000;/g' ./$(PROJECT)/src/lscript.ld
 .PHONY: sdk-harness
 
 gui:
