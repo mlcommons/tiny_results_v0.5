@@ -1,0 +1,148 @@
+#encoding=utf-8
+from subprocess import check_output, PIPE
+from sys import stderr, stdout
+
+top = '.'
+out = 'build'
+APPNAME_person_detection = 'person_detection'
+VERSION = '2.3.1'
+
+flashspeed = 20000
+
+def options(opt):
+    pass
+
+def flash(ctx):
+    command = ""
+    appname = APPNAME_person_detection
+    print("Flashing target " + appname, file = stdout)
+    command = "JFlashSPI_CL -connect -open %(build_dir)s/%(appname)s.bin  0x0 -speed %(speed)s -auto" % {
+            "build_dir": top + "/" + out,
+            "appname" : appname,
+            "speed": flashspeed
+        }
+    rtl = check_output(command, shell = True)
+    print(rtl.decode(), file = stdout)
+    if "ERROR" in (rtl.decode()):
+        print("Flash failed", file = stderr)
+
+def configure(ctx):
+    target = ''
+    target = 'riscv32-unknown-elf-'
+    ctx.env.CC = target+'gcc'
+    ctx.env.AR = target+'ar'
+    ctx.env.AS = target+'gcc'
+    ctx.env.CXX = target+'g++'
+    ctx.env.LINK_CXX = target+'g++'
+    ctx.env.OBJCOPY = target+'objcopy'
+    
+    ctx.load('gcc g++ gas')
+    #ctx.load('compiler_c')
+
+def build(ctx):
+    configure(ctx)
+    Optimize = '-O2'
+    cxx_files = ctx.path.ant_glob("tensorflow/**/*.cc")
+    c_files = ctx.path.ant_glob("tensorflow/**/*.c")
+    as_files = list()
+    c_files_rv32 = ctx.path.ant_glob('riscv_baremetal/**/*.c', excl=['riscv_baremetal/test/**/*.c', '**/main.c'])
+    cxx_files_rv32 = ctx.path.ant_glob('riscv_baremetal/**/*.cc')
+    as_files_rv32 = ctx.path.ant_glob('riscv_baremetal/arch/**/*.s')
+    tiny_files_rv32 = ctx.path.ant_glob('api/**/*.cpp') +\
+        ["main.cpp"]
+
+    def_list = ["NDEBUG", \
+                "TF_LITE_STATIC_MEMORY"] # Is this parameter preprocessor definitions? Yes it is!
+    inc_list = [top, \
+                top + "/third_party/gemmlowp", \
+                top + "/third_party/flatbuffers/include", \
+                top + "/third_party/ruy"]
+
+    rv32_inc_list = ['riscv_baremetal/include',
+				'riscv_baremetal/include/cmsis',
+				'riscv_baremetal/include/device',
+				'riscv_baremetal/include/drivers',
+				'riscv_baremetal/include/lib'
+				]
+    
+    rv32_tiny_inc_list_hello = list()
+    rv32_tiny_inc_list_vww = list()
+    rv32_tiny_inc_list_dcase = list()
+    rv32_tiny_inc_list_kws = list()
+    rv32_tiny_inc_list_ic = list()
+
+
+    c_flags = ["--std=c99"]
+    cxx_flags = ["--std=c++11"]
+    ld_flags = ["-lm"]
+    as_flags=['-std=gnu11']
+
+    rv32_tiny_inc_list_vww = [top]
+
+    cxx_files_main_person_detection = ['rv32_submitter_implemented/submitter_implemented_vww.cpp',] +\
+        ctx.path.ant_glob("vww/*.cc")
+
+    as_files += as_files_rv32
+    c_files += c_files_rv32
+    cxx_files += cxx_files_rv32 + tiny_files_rv32
+    def_list += ['TF_LITE_USE_GLOBAL_CMATH_FUNCTIONS',
+            'TF_LITE_USE_GLOBAL_ROUND',
+            'USE_TENSFLOWLITE',
+            'RV32_GCC',
+            'TF_LITE_USE_GLOBAL_MAX',
+            'TF_LITE_USE_GLOBAL_MIN']
+    march_ops = '-march=rv32imaf'
+    inc_list += rv32_inc_list
+    ld_flags = [
+            '-std=gnu++14',
+            '-nostartfiles',
+            '-static',
+            '-Wl,-n',
+            '-Wl,--gc-sections',
+            '-Wl,-Map,memory.map',
+            '-Wl,--start-group',
+            '-lstdc++',
+            '-lsupc++',
+            #'-specs=nano.specs',
+            '-specs=nosys.specs',
+            march_ops,
+            '-lm',
+            '-lc',
+            '-lgcc',
+            '-lnosys',
+            '-Wl,-T../riscv_baremetal/arch/rv32/rv32_flash.ld',
+    ]
+    cxx_flags=['-std=gnu++14', '-fno-rtti', '-Wvla',  '-Wall', '-Wextra', 
+            '-Wno-unused-parameter', '-Wno-missing-field-initializers',
+            '-fmessage-length=0', '-fno-exceptions',
+            '-ffunction-sections', '-fno-use-cxa-atexit',
+            march_ops, '-fdata-sections', '-funsigned-char',
+            '-fno-delete-null-pointer-checks', 
+            '-fomit-frame-pointer', Optimize, '-g', '-c']
+    c_flags=['-std=gnu11',
+            '-c', '-Wall', '-Wextra', '-Wno-unused-parameter', 
+            '-Wno-missing-field-initializers', '-fmessage-length=0', 
+            '-fno-exceptions', '-ffunction-sections', 
+            '-fdata-sections', '-funsigned-char', march_ops,
+            '-fno-delete-null-pointer-checks', '-fomit-frame-pointer', Optimize, '-g']
+    as_flags=['-std=gnu11',
+            '-c', '-Wall', '-Wextra', '-Wno-unused-parameter',
+            '-Wno-missing-field-initializers', '-fmessage-length=0',
+            '-fno-exceptions', '-ffunction-sections', 
+            '-fdata-sections', '-funsigned-char', march_ops,
+            '-fno-delete-null-pointer-checks', '-fomit-frame-pointer', Optimize, '-g']
+        
+    ctx.program(
+        source = cxx_files + c_files + as_files + cxx_files_main_person_detection,\
+        target = APPNAME_person_detection,\
+        defines = def_list,\
+        includes = inc_list + rv32_tiny_inc_list_vww,\
+        cxxflags = cxx_flags,\
+        cflags = c_flags,\
+        asflags = as_flags,\
+        ldflags = ld_flags
+    )
+        
+    ctx(rule="${OBJCOPY} -O binary ${SRC} ${TGT}",
+        source= APPNAME_person_detection,
+        target= APPNAME_person_detection + ".bin", always=True)
