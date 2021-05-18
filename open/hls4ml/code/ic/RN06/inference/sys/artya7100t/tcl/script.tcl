@@ -74,10 +74,15 @@ apply_bd_automation -rule xilinx.com:bd_rule:microblaze -config { \
 # Enable full FPU
 set_property -dict [list CONFIG.C_USE_FPU {2}] [get_bd_cells microblaze_mcu]
 
+# Create UART-lite interface
+#create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uart
+#apply_board_connection -board_interface "usb_uart" -ip_intf "axi_uart/UART" -diagram $design_name
+#set_property -dict [list CONFIG.C_BAUDRATE {115200}] [get_bd_cells axi_uart]
+
 # Create UART interface
-create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0
-apply_board_connection -board_interface "usb_uart" -ip_intf "axi_uartlite_0/UART" -diagram $design_name
-set_property -dict [list CONFIG.C_BAUDRATE {115200}] [get_bd_cells axi_uartlite_0]
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uart16550:2.0 axi_uart
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/mig_7series_0/ui_clk (83 MHz)} Clk_slave {Auto} Clk_xbar {Auto} Master {/microblaze_mcu (Periph)} Slave {/axi_uart/S_AXI} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins axi_uart/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {usb_uart ( USB UART ) } Manual_Source {Auto}}  [get_bd_intf_pins axi_uart/UART]
 
 apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { \
     Clk_master {/mig_7series_0/ui_clk (83 MHz)} \
@@ -92,9 +97,9 @@ apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { \
     Clk_slave {Auto} \
     Clk_xbar {Auto} \
     Master {/microblaze_mcu (Periph)} \
-    Slave {/axi_uartlite_0/S_AXI} \
+    Slave {/axi_uart/S_AXI} \
     intc_ip {New AXI Interconnect} \
-    master_apm {0} } [get_bd_intf_pins axi_uartlite_0/S_AXI]
+    master_apm {0} } [get_bd_intf_pins axi_uart/S_AXI]
 
 # Add accelerator and connect s-axi interface
 create_bd_cell -type ip -vlnv xilinx.com:hls:$top_module:1.0 $top_module
