@@ -73,19 +73,16 @@ def main(args):
     #y_test = tf.keras.utils.to_categorical(y_test, num_classes)
 
     # partial dataset (runner)
-    df = pd.read_csv('benchmark-runner-ml/datasets/ic01/y_labels.csv', names=['file_name', 'num_classes', 'label'])
+    data_path = 'ulpmark-ml/datasets/ic01'
+    df = pd.read_csv(os.path.join(data_path,'y_labels.csv'), names=['file_name', 'num_classes', 'label'])
     X_test = np.zeros((len(df), 32, 32, 3))
     y_test = np.zeros((len(df), 10))
     for i, (file_name, label) in enumerate(zip(df['file_name'], df['label'])):
-        with open(os.path.join('benchmark-runner-ml/datasets/ic01',file_name),'rb') as f:
+        with open(os.path.join(data_path,file_name),'rb') as f:
             image_bytes = f.read()
             data = np.frombuffer(image_bytes,np.uint8).reshape(32, 32, 3)
             X_test[i, :, :, :] = data
             y_test[i, label] = 1
-
-    # just take first 10 events
-    #X_test = X_test[0:10]
-    #y_test = y_test[0:10]
 
     y_keras = model_rescale.predict(X_test)
 
@@ -134,43 +131,14 @@ def main(args):
     hls_model = hls4ml.converters.keras_to_hls(cfg)
 
     if bool(our_config['convert']['Trace']):
-        from hls4ml.model.profiling import compare, numerical
-        import matplotlib
-        matplotlib.use('Agg')
-        import matplotlib.pyplot as plt
-        
-        plt.figure()
-        wp, ap = numerical(model=model, hls_model=hls_model, X=X_test)
-        plt.show()
-        plt.savefig('profiling_numerical.png', dpi=300)
-        
-        plt.figure()
-        cp = compare(keras_model=model, hls_model=hls_model, X=X_test, plot_type="dist_diff")
-        plt.show()
-        plt.savefig('profiling_compare.png', dpi=300)
-
         y_hls, hls4ml_trace = hls_model.trace(X_test)
         np.save('y_hls.npy', y_hls)
         keras_trace = hls4ml.model.profiling.get_ymodel_keras(model, X_test)
-        
-        for layer in hls4ml_trace.keys():
-            plt.figure()
-            klayer = layer
-            if '_alpha' in layer:
-                klayer = layer.replace('_alpha','')
-            plt.scatter(hls4ml_trace[layer].flatten(), keras_trace[klayer].flatten(), s=0.2)
-            min_x = min(np.amin(hls4ml_trace[layer]), np.amin(keras_trace[klayer]))
-            max_x = max(np.amax(hls4ml_trace[layer]), np.amax(keras_trace[klayer]))
-            plt.plot([min_x, max_x], [min_x, max_x], c='gray')
-            plt.xlabel('hls4ml {}'.format(layer))
-            plt.ylabel('QKeras {}'.format(klayer))
-            plt.show()
-            plt.savefig('profiling_{}.png'.format(layer), dpi=300)
     else:
         hls_model.compile()
         y_hls = hls_model.predict(X_test)        
         
-    print("Keras Accuracy:  {}".format(accuracy_score(np.argmax(y_test, axis=1), np.argmax(y_keras, axis=1))))
+    print("QKeras Accuracy:  {}".format(accuracy_score(np.argmax(y_test, axis=1), np.argmax(y_keras, axis=1))))
     print("hls4ml Accuracy: {}".format(accuracy_score(np.argmax(y_test, axis=1), np.argmax(y_hls, axis=1))))
 
     # Bitfile time
@@ -189,7 +157,6 @@ def main(args):
 
         # manual bit file creation
         os.system('/bin/bash -c "source {XILINX_VIVADO}/settings64.sh && cd ../inference/sys/{board_name} && make clean sys ACC={acc_name} INTERFACE={interface}"'.format(XILINX_VIVADO=XILINX_VIVADO,board_name=board_name,acc_name=acc_name,interface=interface))
-
         # make sdk harness code
         os.system('/bin/bash -c "source {XILINX_VIVADO}/settings64.sh && cd ../inference/sdk/{board_name} && make clean sdk-harness ACC={acc_name} SAMPLE_COUNT=10"'.format(XILINX_VIVADO=XILINX_VIVADO,board_name=board_name,acc_name=acc_name))
 

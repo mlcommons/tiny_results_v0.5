@@ -21,6 +21,10 @@ python train.py -c RN06_pynqz2.yml
 ```bash
 source <path_to_Vivado>/Vivado/2019.1/settings64.sh
 ```
+* Get test data:
+```bash
+source get_test_data.sh
+```
 
 * Convert RN06:
 ```bash
