@@ -41,14 +41,15 @@ double get_elapsed_time(u64 clk_start, u64 clk_stop )
 /* accelerator initialization routine */
 void init_accelerators()
 {
-    printf("INFO: Initializing accelerator\n\r");
+    //printf("INFO: Initializing accelerator\n\r");
     do_resnet_cfg = XResnet_axi_LookupConfig(XPAR_RESNET_AXI_DEVICE_ID);
     if (do_resnet_cfg)
     {
         int status  = XResnet_axi_CfgInitialize(&do_resnet, do_resnet_cfg);
         if (status != XST_SUCCESS)
         {
-            printf("ERROR: Initializing accelerator\n\r");
+            ;
+            //printf("ERROR: Initializing accelerator\n\r");
         }
     }
 }
@@ -61,19 +62,15 @@ void init_accelerators()
 void
 th_final_initialize(void)
 {
-	init_platform();
-
-	init_accelerators();
-
 	floatsize = sizeof(float);
-	src_mem_size = (src_FEATURE_COUNT* sizeof(unsigned char));
-	dst_mem_size = (dst_FEATURE_COUNT* sizeof(unsigned char));
+	src_mem_size = (src_FEATURE_COUNT * sizeof(unsigned char));
+	dst_mem_size = (dst_FEATURE_COUNT * sizeof(unsigned char));
 
 	//malloc_stats();
 	//src_mem = malloc(src_mem_size);
 	//dst_mem = malloc(dst_mem_size);
-	printf("src: %p, dst %p \n",src_mem,dst_mem);
-	th_printf("INFO: Init Finished!\r\n");
+	//printf("src: %p, dst %p \n",src_mem,dst_mem);
+	//th_printf("INFO: Init Finished!\r\n");
 }
 
 /**
@@ -88,25 +85,25 @@ th_timestamp_initialize(void)
     /* Timer Counter */
     int status = XTmrCtr_Initialize(&TimerCounterInst, TMRCTR_DEVICE_ID);
     if (status != XST_SUCCESS){
-    	printf("ERROR: Timer counter initialization failed \r\n");
-    	return status;
+        //printf("ERROR: Timer counter initialization failed \r\n");
+        return;
     }
-    printf("INFO: Timer counter initialized\r\n");
+    //printf("INFO: Timer counter initialized\r\n");
 
 
-    printf("INFO: starting timer calibration\r\n");
+    //printf("INFO: starting timer calibration\r\n");
     start_64b_counter();
     long long unsigned calibration_start = get_64b_counter_value();
     usleep(1000); //sleep for 1000us to calibrate timer
     long long unsigned calibration_stop = get_64b_counter_value();
-    printf("INFO: stopping timer calibration\r\n");
+    //printf("INFO: stopping timer calibration\r\n");
     stop_64b_counter();
 
     start_64b_counter();
     th_timer_start = get_64b_counter_value();
 
     th_calibration_time = get_elapsed_time(calibration_start, calibration_stop)/1000; //Calibrated over 1s, set calibration time to be 1us (output resolution)
-    printf("INFO: Time calibration for 1 microseconds: %u clk\n\r", th_calibration_time);
+    //printf("INFO: Time calibration for 1 microseconds: %u clk\n\r", th_calibration_time);
 
     /* USER CODE 1 END */
     /* This message must NOT be changed. */
@@ -165,7 +162,7 @@ th_serialport_initialize(void)
 	//FW Needs to be recompiled for lower speed? #TODO
 #else
 /* In performance mode, we talk directly to the DUT at 115200 baud */
-	init_uart();
+	//init_uart();
 #endif
 }
 

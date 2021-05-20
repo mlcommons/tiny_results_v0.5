@@ -43,13 +43,10 @@ void getMax(char input, short index)
 void
 th_load_tensor(void)
 {
-    init_platform();
-    init_accelerators();
-
     Xil_DCacheFlushRange((UINTPTR)src_mem, src_FEATURE_COUNT * sizeof(unsigned char));
     Xil_DCacheFlushRange((UINTPTR)dst_mem, dst_FEATURE_COUNT * sizeof(unsigned char));
 
-    printf("src_mem_size: %li", src_mem_size);
+    //printf("src_mem_size: %li", src_mem_size);
     for (int i = 0; i < src_mem_size; i++) {//Init SRC mem with input data (32x32x3, 3072 uint8)
         src_mem[i] = (gp_buff[i]);
     }
@@ -66,8 +63,6 @@ th_load_tensor(void)
 void
 th_infer(void)
 {
-	init_platform();
-	init_accelerators();
     Xil_DCacheFlushRange((UINTPTR)src_mem, src_FEATURE_COUNT * sizeof(unsigned char));
     Xil_DCacheFlushRange((UINTPTR)dst_mem, dst_FEATURE_COUNT * sizeof(unsigned char));
     unsigned char *src_mem_i = src_mem;
@@ -111,7 +106,7 @@ th_results(void)
            getMax(dst_mem[i], i);
     	   printf("check %i",i);
     }
-       printf("The max index is: %i\r\n", i_max);
+    printf("The max index is: %i\r\n", i_max);
     res_arr[i_max] = 1.0;
 
     /* USER CODE 1 END */

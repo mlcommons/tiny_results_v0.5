@@ -71,17 +71,22 @@ const unsigned OUTPUT_N_ELEMENTS = dst_SAMPLE_COUNT*dst_FEATURE_COUNT;
 /* the top of the hill :-) */
 int main(int argc, char** argv)
 {
+	init_platform();
+	init_accelerators();
 
     /* ****** TEST HARNESS ******* */
-    xil_printf("INFO: Initalizing EEMBC Test Harness\r\n");
+    //xil_printf("INFO: Initalizing EEMBC Test Harness\r\n");
     //Initalize the test harness
     ee_benchmark_initialize();
 
     //Pass UART input to the test harness command parser
-    xil_printf("INFO: Handing off to EEMBC Test Harness Command Parser!\r\n");
+    //xil_printf("INFO: Handing off to EEMBC Test Harness Command Parser!\r\n");
     while (true) { //Optimize me! TODO Is there a more power efficient way to do this? does it matter?
-    	ee_serial_callback(inbyte());
+        char c = inbyte();
+        ee_serial_callback(c);
     }
+
+    printf("INFO: DONE\r\n");
 
     cleanup_platform();
 
