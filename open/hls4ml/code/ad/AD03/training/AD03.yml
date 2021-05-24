@@ -1,0 +1,48 @@
+---
+dev_directory: "./dev_data"
+feature:
+  frames: 5
+  hop_length: 512
+  n_fft: 1024
+  n_mels: 128
+  power: 2
+fit:
+  batch_size: 512
+  compile:
+    loss: mean_squared_error
+    optimizer: adam
+  epochs: 100
+  shuffle: true
+  validation_split: 0.1
+  verbose: 1
+max_fpr: 0.1
+model:
+  batch_norm: true
+  encode_dim: 8
+  hidden_dim: 64
+  l1reg: 0
+  name: qkeras_model
+  quantization:
+    bits: 10
+    int_bits: 0
+    last_bits: 10
+    last_int_bits: 10
+    relu_bits: 10
+    relu_int_bits: 5
+  halfcode_layers: 1
+  fan_in_out: 64
+  qbatch_norm: false
+model_directory: "./model/ad03"
+pruning:
+  constant: false
+  decay: false
+  final_step: 0
+  initial_step: 0
+  power: 0
+  sparsity: 1
+  initial_sparsity: 0
+  final_sparsity: 0
+result_directory: "./result/ad03"
+result_file: result.csv
+
+
