@@ -72,7 +72,7 @@ Then you need to install jlink software from [here](https://www.segger.com/downl
 Build the firmware with
 ```bash
 cd closed/PengChengLaboratory/code/ad/
-python tinymlperf/GenerateModel.py
+python ConvertModel.py
 waf distclean
 waf distclean configure build --tinymlperf --pclrv32
 ```
