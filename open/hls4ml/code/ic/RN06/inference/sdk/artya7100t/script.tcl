@@ -1,0 +1,1 @@
+../common/script_microblaze.tcl
