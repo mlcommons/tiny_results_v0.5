@@ -1,15 +1,11 @@
 # Tiny MLPerf™ v0.1 `hls4ml` Xilinx PYNQ-Z2 Open Submission
 
 By `hls4ml` team
-<p float="left">
-   <a href="https://fastmachinelearning.org/"><img src="https://fastmachinelearning.org/hls4ml/_images/hls4ml_logo.png" alt="hls4ml" width="400"/></a>
-</p>
+<a href="https://fastmachinelearning.org/"><img src="https://fastmachinelearning.org/hls4ml/_images/hls4ml_logo.png" alt="hls4ml" width="400"/></a>
 
 ## Hardware
 * Board is a TUL PYNQ-Z2 based on Xilinx Zynq SoC (See https://www.tul.com.tw/productspynq-z2.html for more information).
-<p float="left">
-   <img src="PYNQ-Z2.jpg" alt="PYNQ-Z2" width="400"/></a>
-</p>
+<img src="https://user-images.githubusercontent.com/4932543/120665525-b47d6580-c440-11eb-9e74-fb3d86673683.jpg" alt="PYNQ-Z2" width="400"/>
 
 ## Code structure
 The code is structured as follows
@@ -53,9 +49,10 @@ hls4ml
 
 ```
 * For both the anomaly detection model (AD03) and the image classification model (RN06), there are `training` and `inference` subdirectories.
-* Under `training`, there are scripts to train the model with `QKeras` (`train.py`) and convert it to an HLS project using `hls4ml` (`convert.py`).
-* For convenience the pretrained models in `.h5` format are provided in the repository as indicated.
-* Under `inference`, Xilinx SDK 2019.1 projects will be automatically created after successfully running `convert.py`.
+* Under `training`, there are scripts to train the model with `QKeras` (`train.py`) and convert it to a Xilinx HLS/Vivado/SDK project using `hls4ml` (`convert.py`).
+* The configruation is controlled by `yml` files.
+* For convenience, the pretrained models in `.h5` format are provided in the repository as indicated.
+* Under `inference`, the Xilinx HLS, Vivado, and SDK projects will be automatically created after successfully running `convert.py` in the `hls`, `sys`, and `sdk` folders respectively.
 
 ## Setup
 
@@ -77,12 +74,10 @@ conda activate tiny-mlperf-env
 ```bash
 source <path_to_Vivado>/Vivado/2019.1/settings64.sh
 ```
-* Ensure Pynq-Z2 board is connected (and powered) by USB and visible.
-<p float="left">
-   <img src="RN06_running.jpg" alt="RN06 running" width="400"/>
-</p>
+* Ensure Pynq-Z2 board is connected (and powered) by USB and visible. 
 * For power measurements, solder connections [add instructions + screenshots]
-
+<img src="https://user-images.githubusercontent.com/4932543/120665682-d971d880-c440-11eb-8154-215034d89c01.jpg" alt="RN06 running" width="400"/>
+  
 ## Training with `QKeras`
 ### AD03 model
 
@@ -144,6 +139,14 @@ python convert.py -c RN06_pynqz2.yml
 
 ## Program FPGA and run software
 
-* Open Xilinx SDK GUI and program bit file [add screenshot]
+* Change directory
+```bash
+cd code/ic/<model name>/inference/sdk/
+```
+* Open Xilinx SDK GUI 
+```bash
+make gui
+```
+* Program the FPGA with the bit file [add screenshot]
 * Run test harness software [add screenshot]
 * Open EEMBC runner GUI and perform measurements [add screenshot]
