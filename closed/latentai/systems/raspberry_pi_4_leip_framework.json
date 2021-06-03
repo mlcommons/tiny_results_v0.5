@@ -24,8 +24,8 @@
 	"Hardware Notes": "Pi 4B specfication sheet: https://datasheets.raspberrypi.org/rpi4/raspberry-pi-4-product-brief.pdf,
 					  Broadcom BCM2711 Specifications: https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2711/README.md",
 
-	"Inference Framework": "TVM",
-	"Software Libraries": "OpenCV, DMLC Core",
+	"Inference Framework": "LEIP v1.9.3",
+	"Software Libraries": "DMLC Core",
 	"Operating System ": "Raspberry Pi OS 64-bit (aarch64)",
 	"Other Software Stack": "",
 	"Software Notes": "OS Image Download: https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2020-08-24/2020-08-20-raspios-buster-arm64.zip",
@@ -38,7 +38,7 @@
 
 	"Quantization Method": "",
 	"Training framework (open division)": "",
-	"ML Model Compiler(s)": "LEIP Framework",
+	"ML Model Compiler(s)": "LEIP v1.9.3",
 	"General Compiler(s)": "",
 	"Other Software": "",
 	"Training and Quantization Notes": ""
