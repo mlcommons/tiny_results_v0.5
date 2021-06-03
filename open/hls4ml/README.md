@@ -66,7 +66,7 @@ conda-env create -f environment.yml
 conda activate tiny-mlperf-env
 ```
 * Install Vivado 2019.1 from https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html
-* Download Pynq-Z2 board files (from https://d2m32eurp10079.cloudfront.net/Download/pynq-z2.zip) and install appropriately
+* Download PYNQ-Z2 board files (from https://d2m32eurp10079.cloudfront.net/Download/pynq-z2.zip) and install appropriately
 ```bash
 <path_to_Vivado>/Vivado/2019.1/data/boards
 ```
@@ -74,10 +74,10 @@ conda activate tiny-mlperf-env
 ```bash
 source <path_to_Vivado>/Vivado/2019.1/settings64.sh
 ```
-* Ensure Pynq-Z2 board is connected (and powered) by USB and visible. 
+* Ensure PYNQ-Z2 board is connected (and powered) by USB and visible.
 * For power measurements, solder connections [add instructions + screenshots]
 <img src="https://user-images.githubusercontent.com/4932543/120665682-d971d880-c440-11eb-8154-215034d89c01.jpg" alt="RN06 running" width="400"/>
-  
+
 ## Training with `QKeras`
 ### AD03 model
 
@@ -141,9 +141,9 @@ python convert.py -c RN06_pynqz2.yml
 
 * Change directory
 ```bash
-cd code/ic/<model name>/inference/sdk/
+cd code/ic/<model_name>/inference/sdk/
 ```
-* Open Xilinx SDK GUI 
+* Open Xilinx SDK GUI
 ```bash
 make gui
 ```
