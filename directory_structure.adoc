@@ -5,8 +5,9 @@ A submission is for one code base for the benchmarks submitted. An org may make 
 * <division>/
 ** <submitting_organization>/
 *** systems/
-**** <system_desc_id>.json   # combines hardware and software stack information
+**** <system_desc_id>.json   #combines hardware and software stack information
 **** TinyMLPerf_v0.1_Submission_Checklist.pdf
+**** Energy-Hookup.pdf #image or text description how to reproduce energy configuration and measurment if submitting energy results
 *** code/
 **** <benchmark_name per reference>/ 
 ***** <implementation_id>/
@@ -15,11 +16,14 @@ A submission is for one code base for the benchmarks submitted. An org may make 
 **** <system_desc_id>/
 ***** <benchmark>/
 ******* performance/
-******** performance_log.txt # log produced by runner after performance test
-******** performance_script.async # script file produced by runner after performance test
+******** performance_log.txt #log produced by runner after performance test
+******** performance_script.async #script file produced by runner after performance test
 ******* accuracy/
-******** accuracy_log.txt # log produced by runner after accuracy test
-******** accuracy_script.async # script file produced by runner after accuracy test
+******** accuracy_log.txt #log produced by runner after accuracy test
+******** accuracy_script.async #script file produced by runner after accuracy test
+******* energy/ #if submitting energy results
+******** energy_log.txt #log produced by runner after accuracy test
+******** energy_script.async #script file produced by runner after accuracy test
 
 
 
