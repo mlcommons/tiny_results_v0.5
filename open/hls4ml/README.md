@@ -72,7 +72,7 @@ conda-env create -f environment.yml
 conda activate tiny-mlperf-env
 ```
 * Install Vivado 2019.1 from https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html
-* Download PYNQ-Z2 board files (from https://dpoauwgwqsy2x.cloudfront.net/Download/pynq-z2.zip) and install appropriately
+* Download PYNQ-Z2 board files (from https://dpoauwgwqsy2x.cloudfront.net/Download/pynq-z2.zip) and [install appropriately](https://pynq.readthedocs.io/en/v2.5/overlay_design_methodology/board_settings.html) by extracting and copying files to:
 ```bash
 <path_to_Vivado>/Vivado/2019.1/data/boards
 ```
