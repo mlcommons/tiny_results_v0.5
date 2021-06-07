@@ -81,8 +81,9 @@ conda activate tiny-mlperf-env
 source <path_to_Vivado>/Vivado/2019.1/settings64.sh
 ```
 * Ensure PYNQ-Z2 board is connected (and powered) by USB and visible.
+  * <img src="https://user-images.githubusercontent.com/4932543/120665682-d971d880-c440-11eb-8154-215034d89c01.jpg" alt="RN06 running" width="400"/>
 * For power measurements, solder connections [add instructions + screenshots]
-<img src="https://user-images.githubusercontent.com/4932543/120665682-d971d880-c440-11eb-8154-215034d89c01.jpg" alt="RN06 running" width="400"/>
+
 
 ## Training with `QKeras`
 ### AD03 model
@@ -153,6 +154,11 @@ cd code/ic/<model_name>/inference/sdk/
 ```bash
 make gui
 ```
-* Program the FPGA with the bit file [add screenshot]
-* Run test harness software [add screenshot]
-* Open EEMBC runner GUI and perform measurements [add screenshot]
+* Program the FPGA with the bit file in SDK
+  * <img width="600" alt="Screen Shot 2021-06-06 at 10 20 14 PM" src="https://user-images.githubusercontent.com/4932543/120962896-78ceee00-c715-11eb-8888-540dcf3bed39.png"/>
+* Run test harness software in SDK
+  * <img width="600" alt="Screen Shot 2021-06-06 at 10 22 07 PM" src="https://user-images.githubusercontent.com/4932543/120963020-b6337b80-c715-11eb-93c7-e0de1fa2c070.png"/>
+* Download EEMBC runner GUI and AD/IC benchmark datasets (See https://github.com/eembc/ulpmark-ml) 
+* Open EEMBC runner GUI and and perform measurements 
+  * <img width="400" alt="Screen Shot 2021-06-06 at 10 18 51 PM" src="https://user-images.githubusercontent.com/4932543/120962751-32798f00-c715-11eb-816a-c1ab4f11da47.png"/>
+
