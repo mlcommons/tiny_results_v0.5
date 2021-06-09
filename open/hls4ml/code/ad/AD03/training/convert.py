@@ -52,9 +52,9 @@ interface = 'm_axi' # 's_axilite', 'm_axi', 'hls_stream'
 axi_width = 8 # 16, 32, 64
 implementation = 'serial' # 'serial', 'dataflow'
 
-hls4ml.model.optimizer.OutputRoundingSaturationMode.layers = ['Activation']
-hls4ml.model.optimizer.OutputRoundingSaturationMode.rounding_mode = 'AP_RND'
-hls4ml.model.optimizer.OutputRoundingSaturationMode.saturation_mode = 'AP_SAT'
+#hls4ml.model.optimizer.OutputRoundingSaturationMode.layers = ['Activation']
+#hls4ml.model.optimizer.OutputRoundingSaturationMode.rounding_mode = 'AP_RND'
+#hls4ml.model.optimizer.OutputRoundingSaturationMode.saturation_mode = 'AP_SAT'
 
 # for AD03+Pynq (original)
 hls_config = param['HLSConfig']
