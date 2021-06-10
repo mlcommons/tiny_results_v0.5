@@ -103,7 +103,7 @@ cd code/ad/AD03/training/
 ```bash
 python train.py -c AD03.yml
 ```
-_n.b. if you don't have a GPU, you can comment out the `import setGPU` (true also for later python scripts_
+_n.b. if you don't have a GPU, you can comment out the `import setGPU` (true also for later python scripts)_
 
 ### RN06 model
 
