@@ -4,26 +4,26 @@
 - Click: `Xilinx >> Create Boot Image`
 - Click: `Add`
 
-![doc/01.png](doc/01.png)
+<img src="doc/01.png" width=600/>
 
 - Select: `anomaly_detector_standalone`
 
-![doc/02.png](doc/02.png)
+<img src="doc/02.png" width=600/>
 
 - Click: `Create Image`
 - Click: `Xilinx >> Program Flash`
 - Click: `Image File:` - `Browse`
 
-![doc/03.png](doc/03.png)
+<img src="doc/03.png" width=400/>
 
 - Select: `BOOT.bin` (check the full path at the top of the following image)
 
-![doc/04.png](doc/04.png)
+<img src="doc/04.png" width=600/>
 
 - Click: `Ok`
 - Select: `anomaly_detector_fsbl.elf`
 
-![doc/05.png](doc/05.png)
+<img src="doc/05.png" width=600/>
 
 - Click: `Ok`
 - **Make sure that the jumper on the board is on QSPI**
