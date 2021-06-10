@@ -1,0 +1,6 @@
+.sdk
+.metadata
+resnet*
+anomaly_detector*
+RemoteSystemsTempFiles
+SDK.log

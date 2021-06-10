@@ -9,8 +9,17 @@ At 1 pm PT on May 7th, you must:
 * Enter **all** of your results
 * Email your copy of the results table to the chairs (cbanbury@g.harvard.edu and vj@eecs.harvard.edu)
 
+## Submit Results
+Before Submitting your code and results to this GitHub page, you must email your results to the Chairs (cbanbury@g.harvard.edu and vj@eecs.harvard.edu).
+
+At 1 pm PT on May 7th, you must:
+* Make a copy of the [results template](https://docs.google.com/spreadsheets/d/1M5oa12XjlobhcvuXaDmT42tVv6yY9O3OVSJ3sSDYKZ0/edit?usp=sharing)
+* Remove the example results
+* Enter **all** of your results
+* Email your copy of the results table to the chairs (cbanbury@g.harvard.edu and vj@eecs.harvard.edu)
+
 ## GitHub Submission HOWTO
-At 1:30 pm PT on May 7th, you must submit a pull request will all of the required components.
+At 1:30 pm PT on May 7th, you must submit a pull request with all of the required components.
 
 ### Clone the MLPerf™ Tiny v0.5 submission tree
 

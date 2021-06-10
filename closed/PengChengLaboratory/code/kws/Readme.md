@@ -1,0 +1,2 @@
+Model copied from [here](https://raw.githubusercontent.com/mlcommons/tiny/master/v0.1/training/keyword_spotting/trained_models/kws_ref_model.tflite)
+Run helper script `GenerateModel.py` to get `model.cc` file.
