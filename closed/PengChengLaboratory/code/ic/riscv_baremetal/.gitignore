@@ -1,0 +1,19 @@
+build
+
+# cscope files
+cscope.*
+ncscope.*
+
+# gnu global files
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+# quilt's file
+patches
+series
+
+*.orig
+*~
+\#*#
