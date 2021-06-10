@@ -168,3 +168,6 @@ make gui
 * Open EEMBC runner GUI and and perform measurements, follow the instructions on the eembc README 
   * <img width="400" alt="Screen Shot 2021-06-06 at 10 18 51 PM" src="https://user-images.githubusercontent.com/4932543/120962751-32798f00-c715-11eb-816a-c1ab4f11da47.png"/>
 
+## Boot from Flash
+
+The PYNQ--Z2 supports Quad SPI Flash. Please follow these [instructions](code/ad/AD03/inference/sdk/pynqz2/README.md) to program and boot from the Flash memory.
