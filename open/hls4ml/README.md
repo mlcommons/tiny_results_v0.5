@@ -74,7 +74,7 @@ conda activate tiny-mlperf-env
 * Install Vivado 2019.1 from https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html
 * Download PYNQ-Z2 board files (from https://dpoauwgwqsy2x.cloudfront.net/Download/pynq-z2.zip) and [install appropriately](https://pynq.readthedocs.io/en/v2.5/overlay_design_methodology/board_settings.html) by extracting and copying files to:
 ```bash
-<path_to_Vivado>/Vivado/2019.1/data/boards
+<path_to_Vivado>/Vivado/2019.1/data/boards/board_files
 ```
 * Setup Vivado 2019.1:
 ```bash
@@ -86,6 +86,9 @@ source <path_to_Vivado>/Vivado/2019.1/settings64.sh
 
 
 ## Training with `QKeras`
+
+In this step, you will download the dataset and perform a quantization-aware training with QKeras.  
+
 ### AD03 model
 
 * Change directory
@@ -96,10 +99,11 @@ cd code/ad/AD03/training/
 ```bash
 ./get_dataset.sh
 ```
-* Train AD03:
+* Train AD03, pretrained model is provided as `model/ad03/model_ToyCar.h5`:
 ```bash
 python train.py -c AD03.yml
 ```
+_n.b. if you don't have a GPU, you can comment out the `import setGPU` (true also for later python scripts)_
 
 ### RN06 model
 
@@ -107,12 +111,14 @@ python train.py -c AD03.yml
 ```bash
 cd code/ic/RN06/training/
 ```
-* Train RN06:
+* Train RN06, pretrained model is provided as `resnet_v1_eembc_RN06/model_best.h5`:
 ```bash
 python train.py -c RN06_pynqz2.yml
 ```
 
 ## Conversion with `hls4ml`
+
+In this step, you will ingest the quantization-aware training performed in the previous step and convert it to firmware using hls4ml.  The hls4ml configuration, `pynqz2.yml` has details such as the implementation architecture.  
 
 ### AD03 model
 
@@ -159,6 +165,6 @@ make gui
 * Run test harness software in SDK
   * <img width="600" alt="Screen Shot 2021-06-06 at 10 22 07 PM" src="https://user-images.githubusercontent.com/4932543/120963020-b6337b80-c715-11eb-93c7-e0de1fa2c070.png"/>
 * Download EEMBC runner GUI and AD/IC benchmark datasets (See https://github.com/eembc/ulpmark-ml) 
-* Open EEMBC runner GUI and and perform measurements 
+* Open EEMBC runner GUI and and perform measurements, follow the instructions on the eembc README 
   * <img width="400" alt="Screen Shot 2021-06-06 at 10 18 51 PM" src="https://user-images.githubusercontent.com/4932543/120962751-32798f00-c715-11eb-816a-c1ab4f11da47.png"/>
 
