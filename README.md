@@ -1,4 +1,4 @@
-# Tiny MLPerf™ v0.1
+# MLPerf™ Tiny v0.5
 
 ## Submit Results
 Before Submitting your code and results to this GitHub page, you must email your results to the Chairs (cbanbury@g.harvard.edu and vj@eecs.harvard.edu).
@@ -12,7 +12,7 @@ At 1 pm PT on May 7th, you must:
 ## GitHub Submission HOWTO
 At 1:30 pm PT on May 7th, you must submit a pull request will all of the required components.
 
-### Clone the Tiny MLPerf™ v0.1 submission tree
+### Clone the MLPerf™ Tiny v0.5 submission tree
 
 Clone the submission tree e.g. under your home directory:
 
@@ -36,7 +36,7 @@ $ git checkout master && git pull
 $ git checkout -b dividiti-closed-aws-g4dn.4xlarge-openvino
 ```
 
-Populate your branch according to the [Tiny MLPerf Directory Structure](https://github.com/mlcommons/submission_tiny_1.0/blob/master/directory_structure.adoc).
+Populate your branch according to the [MLPerf Tiny Directory Structure](https://github.com/mlcommons/submission_tiny_1.0/blob/master/directory_structure.adoc).
 
 You can inspect your changes:
 
