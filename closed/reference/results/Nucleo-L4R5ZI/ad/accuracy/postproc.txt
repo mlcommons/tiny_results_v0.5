@@ -1,0 +1,7 @@
+17067.966 session: m-session-stop-id[20210513130146]
+17067.966 session: Saved this run to session ID 20210513130146
+17068.607 parser: Post processing benchmark run...
+17071.335 ulp-mlperf: Top-1: 77.4%
+17071.345 ulp-mlperf: AUC: 0.86
+17072.434 parser: Wrote init+run commands to: C:\Users\z\eembc\runner\sessions\20210513130146\script.async
+17072.434 parser: m-ready-finished[bm]
