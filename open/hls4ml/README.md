@@ -8,7 +8,12 @@ By `hls4ml` team
   * Nhan Tran, email: <ntran@fnal.gov>, GitHub: [@nhanvtran](https://github.com/nhanvtran)
   * Javier Duarte, email: <jduarte@ucsd.edu>, GitHub: [@jmduarte](https://github.com/jmduarte)
   * Giuseppe DiGuglielmo, email: <giuseppe.diguglielmo@columbia.edu>, GitHub: [@GiuseppeDiGuglielmo](https://github.com/GiuseppeDiGuglielmo)
-
+* Team members:
+  * Nicolò Ghielmetti, CERN
+  * Jules Muhizi, Fermilab/Harvard
+  * Shvetank Prakash, Columbia/Harvard
+  * Rushil Roy, UCSD
+  
 ## Hardware
 * Board is a TUL PYNQ-Z2 based on Xilinx Zynq SoC (See https://www.tul.com.tw/productspynq-z2.html for more information).
 <img src="https://user-images.githubusercontent.com/4932543/120665525-b47d6580-c440-11eb-9e74-fb3d86673683.jpg" alt="PYNQ-Z2" width="400"/>
