@@ -52,9 +52,9 @@ interface = 'm_axi' # 's_axilite', 'm_axi', 'hls_stream'
 axi_width = 8 # 16, 32, 64
 implementation = 'serial' # 'serial', 'dataflow'
 
-hls4ml.model.optimizer.OutputRoundingSaturationMode.layers = ['Activation']
-hls4ml.model.optimizer.OutputRoundingSaturationMode.rounding_mode = 'AP_RND'
-hls4ml.model.optimizer.OutputRoundingSaturationMode.saturation_mode = 'AP_SAT'
+#hls4ml.model.optimizer.OutputRoundingSaturationMode.layers = ['Activation']
+#hls4ml.model.optimizer.OutputRoundingSaturationMode.rounding_mode = 'AP_RND'
+#hls4ml.model.optimizer.OutputRoundingSaturationMode.saturation_mode = 'AP_SAT'
 
 # for AD03+Pynq (original)
 hls_config = param['HLSConfig']
@@ -153,7 +153,7 @@ os.system('/bin/bash -c "cd {output_dir} && vivado_hls -f build_prj.tcl csim=1 s
 os.system('/bin/bash -c "cd ../inference/sys/{board_name} && make clean sys ACC={acc_name} INTERFACE={interface}"'.format(board_name=board_name,acc_name=acc_name,interface=interface))
 
 #perform IP integration of synthesized HLS
-os.system('/bin/bash -c "cd ../inference/sdk/{board_name} && make clean sdk ACC={acc_name} SAMPLE_COUNT=10"'.format(board_name=board_name,acc_name=acc_name))
+os.system('/bin/bash -c "cd ../inference/sdk/{board_name} && make clean sdk-harness ACC={acc_name} SAMPLE_COUNT=10"'.format(board_name=board_name,acc_name=acc_name))
 
 #write SDK project and flash to board
 os.system('/bin/bash -c "cd ../inference/sdk/{board_name} && make gui"'.format(board_name=board_name))
