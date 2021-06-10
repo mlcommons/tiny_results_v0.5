@@ -99,7 +99,7 @@ cd code/ad/AD03/training/
 ```bash
 ./get_dataset.sh
 ```
-* Train AD03, trained model is in `model/ad03`:
+* Train AD03, pretrained model is provided as `model/ad03/model_ToyCar.h5`:
 ```bash
 python train.py -c AD03.yml
 ```
@@ -111,7 +111,7 @@ _n.b. if you don't have a GPU, you can comment out the `import setGPU` (true als
 ```bash
 cd code/ic/RN06/training/
 ```
-* Train RN06, trained model is in `model/rn06`:
+* Train RN06, pretrained model is provided as `resnet_v1_eembc_RN06/model_best.h5`:
 ```bash
 python train.py -c RN06_pynqz2.yml
 ```
